@@ -21,7 +21,7 @@ const useStyles = {
   carDetailContainer: {
     width: "30%"
   },
-
+  
   carPriceContainer: {
     width: "30%"
   },

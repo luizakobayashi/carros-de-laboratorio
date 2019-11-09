@@ -11,6 +11,8 @@ const useStyles = {
   },
 
   carContainer:{
+    display: "flex",
+    flexDirection: "row",
     margin: "15px"
   },
 
@@ -21,6 +23,10 @@ const useStyles = {
   },
 
   carPriceContainer: {
+    display: "flex", 
+    flexDirection: "column", 
+    padding: "5px", 
+    marginLeft: "10px"
   },
 
   carDetailImportant: {
@@ -40,14 +46,14 @@ const useStyles = {
 const CarCard = ({ car }) => {
   return (
     <section style={useStyles.container}>
-      <div style={useStyles.carContainer} style={{display: "flex", flexDirection: "row"}}>
+      <div style={useStyles.carContainer}>
       <div style={useStyles.imageContainer}></div>
       <div style={useStyles.carDetailContainer}>
         <span style={useStyles.carDetailImportant}>{car.model}</span>
         <span style={useStyles.carDetails}>{car.manufacturer}</span>
         <span style={useStyles.carFeatures}>características</span>
       </div>
-      <div style={useStyles.carPriceContainer} style={{display: "flex", flexDirection: "column", padding: "5px", marginLeft: "10px"}}>
+      <div style={useStyles.carPriceContainer}>
         <span>Price</span>
         <strong style={useStyles.carDetailImportant}>{car.price}</strong>
       </div>

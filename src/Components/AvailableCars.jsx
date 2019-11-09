@@ -9,11 +9,21 @@ const cars = [
   }
 ];
 
+const useStyles = {
+  title: {
+    fontWeight: "600",
+    fontSize: "larger",
+    paddingLeft: "5px"
+  }
+};
+
 const AvailableCars = ({}) => {
   return (
     <section>
       <div>
-        Available Cars
+        <div style={useStyles.title}>
+          Carros Disponíveis
+        </div>
         <div style={{width: "40%"}}>
           <CarCard car={cars[0]}></CarCard>
         </div>

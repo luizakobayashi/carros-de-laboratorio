@@ -7,9 +7,9 @@ const useStyles = {
   home: {
     display: "flex", 
     width: "100%",
-    height: "100%",
     backgroundColor: "#f8f8fa",
-    flexDirection: "column"
+    flexDirection: "column",
+    minHeight: "100vh"
   } as React.CSSProperties,
 
   header: {

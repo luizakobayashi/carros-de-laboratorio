@@ -1,13 +1,15 @@
 import React from "react";
+import img from "../imgs/car.png"
 
 const useStyles = {
   container: {
-    border: "solid 2px #f2f2f2",
+    border: "solid 2px #cccc",
     borderRadius: "20px",
     textAlign: "center",
     display: "flex",
     padding: "2% 3%",
-    marginTop: "10px"
+    marginTop: "10px",
+    justifyContent: "space-between"
   },
 
   carContainer:{
@@ -17,6 +19,13 @@ const useStyles = {
   },
 
   imageContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+    paddingRight: "15px"
+  },
+
+  image: {
+    width: "140px"
   },
 
   carDetailContainer: {
@@ -26,7 +35,8 @@ const useStyles = {
     display: "flex", 
     flexDirection: "column", 
     padding: "5px", 
-    marginLeft: "10px"
+    marginLeft: "10px",
+    borderLeft: "2px solid #cccc"
   },
 
   carDetailImportant: {
@@ -47,7 +57,9 @@ const CarCard = ({ car }) => {
   return (
     <section style={useStyles.container}>
       <div style={useStyles.carContainer}>
-      <div style={useStyles.imageContainer}></div>
+      <div style={useStyles.imageContainer}>
+        <img src={img} style={useStyles.image}/>
+      </div>
       <div style={useStyles.carDetailContainer}>
         <span style={useStyles.carDetailImportant}>{car.model}</span>
         <span style={useStyles.carDetails}>{car.manufacturer}</span>

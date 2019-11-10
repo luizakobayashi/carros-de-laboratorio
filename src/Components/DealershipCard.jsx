@@ -2,7 +2,7 @@ import React from "react";
 
 const useStyles = {
     container: {
-      border: "solid 2px #cccc",
+      border: "2px solid #bcbcbc",
       borderRadius: "15px",
       textAlign: "center",
       display: "flex",

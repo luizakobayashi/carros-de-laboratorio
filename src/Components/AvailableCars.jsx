@@ -22,7 +22,8 @@ const useStyles = {
   title: {
     fontWeight: "600",
     fontSize: "larger",
-    paddingLeft: "5px"
+    paddingLeft: "5px",
+    paddingTop: "5px"
   }
 };
 
@@ -35,6 +36,9 @@ const AvailableCars = ({}) => {
         </div>
         <div style={{width: "40%"}}>
           <CarCard car={cars[0]}></CarCard>
+        </div>
+        <div style={useStyles.title}>
+          Selecione a concessionária desejada:
         </div>
         <div style={{width: "40%"}}>
             <DealershipCard dealership={dealerships[0]}></DealershipCard>

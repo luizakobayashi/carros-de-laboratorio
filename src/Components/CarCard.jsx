@@ -29,6 +29,11 @@ const useStyles = {
   },
 
   carDetailContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    paddingRight: "5px",
+    paddingLeft: "5px"
   },
 
   carPriceContainer: {
@@ -36,21 +41,27 @@ const useStyles = {
     flexDirection: "column", 
     padding: "5px", 
     marginLeft: "10px",
-    borderLeft: "2px solid #cccc"
+    borderLeft: "2px solid #cccc",
+    justifyContent: "center"
   },
 
-  carDetailImportant: {
-    fontSize: "2em",
-    display: "flex"
+  carModel: {
+    fontSize: "25px",
+    paddingBottom: "2px"
   },
 
   carDetails: {
-    display: "flex"
+    paddingBottom: "2px"
   },
 
   carFeatures: {
-    display: "flex"
-  }
+    display: "flex",
+    flexWrap: "wrap"
+  },
+
+  carPrice: {
+    fontSize: "30px"
+  },
 };
 
 const CarCard = ({ car }) => {
@@ -61,13 +72,13 @@ const CarCard = ({ car }) => {
         <img src={img} style={useStyles.image}/>
       </div>
       <div style={useStyles.carDetailContainer}>
-        <span style={useStyles.carDetailImportant}>{car.model}</span>
+        <span style={useStyles.carModel}>{car.model}</span>
         <span style={useStyles.carDetails}>{car.manufacturer}</span>
         <span style={useStyles.carFeatures}>características</span>
       </div>
       <div style={useStyles.carPriceContainer}>
         <span>Price</span>
-        <strong style={useStyles.carDetailImportant}>{car.price}</strong>
+        <strong style={useStyles.carPrice}>{car.price}</strong>
       </div>
       </div>
     </section>

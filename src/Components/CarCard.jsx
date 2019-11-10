@@ -74,7 +74,7 @@ const CarCard = ({ car }) => {
       <div style={useStyles.carDetailContainer}>
         <span style={useStyles.carModel}>{car.model}</span>
         <span style={useStyles.carDetails}>{car.manufacturer}</span>
-        <span style={useStyles.carFeatures}>características</span>
+        <span style={useStyles.carFeatures}>{car.features}</span>
       </div>
       <div style={useStyles.carPriceContainer}>
         <span>Price</span>

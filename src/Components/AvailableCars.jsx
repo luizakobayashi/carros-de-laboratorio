@@ -5,7 +5,8 @@ const cars = [
   {
     model: "Test Model",
     price: 10000,
-    manufacturer: "Fiat"
+    manufacturer: "Fiat",
+    features: "Cinza, quatro portas, brilha no escuro"
   }
 ];
 

@@ -25,7 +25,7 @@ const useStyles = {
   img: {
     display: "flex",
     height: "60px",
-    marginLeft: "15px",
+    marginLeft: "50px",
     alignItems: "flex-start"
   },
 

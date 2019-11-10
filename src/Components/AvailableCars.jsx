@@ -29,7 +29,7 @@ const useStyles = {
 
 const AvailableCars = ({}) => {
   return (
-    <section>
+    <section style={{marginLeft: "25px"}}>
       <div>
         <div style={useStyles.title}>
           Carros Disponíveis

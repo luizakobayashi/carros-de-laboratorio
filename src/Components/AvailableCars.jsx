@@ -1,5 +1,6 @@
 import React from "react";
 import CarCard from "./CarCard";
+import DealershipCard from "./DealershipCard";
 
 const cars = [
   {
@@ -7,6 +8,13 @@ const cars = [
     price: 10000,
     manufacturer: "Fiat",
     features: "Cinza, quatro portas, brilha no escuro"
+  }
+];
+
+const dealerships = [
+  {
+    name: "Concessionária",
+    address: "Rua da laranja, 222"
   }
 ];
 
@@ -27,6 +35,9 @@ const AvailableCars = ({}) => {
         </div>
         <div style={{width: "40%"}}>
           <CarCard car={cars[0]}></CarCard>
+        </div>
+        <div style={{width: "40%"}}>
+            <DealershipCard dealership={dealerships[0]}></DealershipCard>
         </div>
       </div>
     </section>

@@ -8,7 +8,8 @@ const useStyles = {
     display: "flex",
     padding: "2% 3%",
     marginTop: "10px",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    width: "90%"
   },
 
   dealershipContainer: {

@@ -19,7 +19,8 @@ const useStyles = {
     alignItems: "center",
     backgroundColor: "#f1f1f1",
     justifyContent: "space-between",
-    padding: "5px"
+    padding: "5px",
+    boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
   },
 
   img: {

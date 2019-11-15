@@ -65,6 +65,20 @@ const useStyles = {
   carPrice: {
     fontSize: "30px",
     fontWeight: "bold"
+  },
+
+  dealerships: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    paddingLeft: "15px"
+  },
+
+  dealershipsTitle: {
+    fontWeight: "600",
+    fontSize: "medium",
+    paddingLeft: "5px",
+    paddingTop: "5px"
   }
 };
 
@@ -98,9 +112,12 @@ const CarCard = ({ car }) => {
         </div>
       </button>
       {cardClicked ? (
-        <DealershipCard
-          dealerships={[{ name: "teste", address: "testsetsete" }]}
-        ></DealershipCard>
+        <div style={useStyles.dealerships}> 
+          <div style={useStyles.dealershipsTitle}>Selecione a concessionária desejada</div>
+          <DealershipCard
+            dealerships={[{ name: "teste", address: "testsetsete" }]}
+          ></DealershipCard>
+        </div>
       ) : null}
     </section>
   );

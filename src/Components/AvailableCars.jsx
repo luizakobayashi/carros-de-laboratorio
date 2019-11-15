@@ -8,6 +8,18 @@ const cars = [
     price: 10000,
     manufacturer: "Fiat",
     features: "Cinza, quatro portas, brilha no escuro"
+  },
+  {
+    model: "Test Model",
+    price: 10000,
+    manufacturer: "Fiat",
+    features: "Cinza, quatro portas, brilha no escuro"
+  },
+  {
+    model: "Test Model",
+    price: 10000,
+    manufacturer: "Fiat",
+    features: "Cinza, quatro portas, brilha no escuro"
   }
 ];
 
@@ -28,21 +40,17 @@ const useStyles = {
 };
 
 const AvailableCars = ({}) => {
+  const getCarList = () => {
+    return cars.map(car => {
+      return <CarCard car={car}></CarCard>;
+    });
+  };
+
   return (
     <section>
       <div>
-        <div style={useStyles.title}>
-          Carros Disponíveis
-        </div>
-        <div style={{width: "40%"}}>
-          <CarCard car={cars[0]}></CarCard>
-        </div>
-        <div style={useStyles.title}>
-          Selecione a concessionária desejada:
-        </div>
-        <div style={{width: "40%"}}>
-            <DealershipCard dealership={dealerships[0]}></DealershipCard>
-        </div>
+        <div style={useStyles.title}>Carros Disponíveis</div>
+        <div style={{ width: "40%" }}>{getCarList()}</div>
       </div>
     </section>
   );

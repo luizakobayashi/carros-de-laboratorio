@@ -1,18 +1,21 @@
-import React from "react";
-import img from "../imgs/car.png"
+import React, { useState, useEffect } from "react";
+import img from "../imgs/car.png";
+import CurrencyFormat from "react-currency-format";
+import DealershipCard from "./DealershipCard";
 
 const useStyles = {
   container: {
-    border: "solid 2px #cccc",
-    borderRadius: "20px",
-    textAlign: "center",
-    display: "flex",
-    padding: "2% 3%",
-    marginTop: "10px",
-    justifyContent: "space-between"
+    textAlign: "center"
   },
 
-  carContainer:{
+  carContainer: {
+    justifyContent: "space-between",
+    display: "flex",
+    marginTop: "10px",
+    padding: "2% 3%",
+    backgroundColor: "#fff",
+    border: "solid 2px #cccc",
+    borderRadius: "20px",
     display: "flex",
     flexDirection: "row",
     margin: "15px"
@@ -37,9 +40,9 @@ const useStyles = {
   },
 
   carPriceContainer: {
-    display: "flex", 
-    flexDirection: "column", 
-    padding: "5px", 
+    display: "flex",
+    flexDirection: "column",
+    padding: "5px",
     marginLeft: "10px",
     borderLeft: "2px solid #cccc",
     justifyContent: "center"
@@ -60,27 +63,45 @@ const useStyles = {
   },
 
   carPrice: {
-    fontSize: "30px"
-  },
+    fontSize: "30px",
+    fontWeight: "bold"
+  }
 };
 
 const CarCard = ({ car }) => {
+  const [cardClicked, setCarClicked] = useState(false);
+  const onCarCardClicked = () => {
+    setCarClicked(!cardClicked);
+  };
+
   return (
     <section style={useStyles.container}>
-      <div style={useStyles.carContainer}>
-      <div style={useStyles.imageContainer}>
-        <img src={img} style={useStyles.image}/>
-      </div>
-      <div style={useStyles.carDetailContainer}>
-        <span style={useStyles.carModel}>{car.model}</span>
-        <span style={useStyles.carDetails}>{car.manufacturer}</span>
-        <span style={useStyles.carFeatures}>{car.features}</span>
-      </div>
-      <div style={useStyles.carPriceContainer}>
-        <span>Price</span>
-        <strong style={useStyles.carPrice}>{car.price}</strong>
-      </div>
-      </div>
+      <button style={useStyles.carContainer} onClick={onCarCardClicked}>
+        <div style={useStyles.imageContainer}>
+          <img src={img} style={useStyles.image} />
+        </div>
+        <div style={useStyles.carDetailContainer}>
+          <span style={useStyles.carModel}>{car.model}</span>
+          <span style={useStyles.carDetails}>{car.manufacturer}</span>
+          <span style={useStyles.carFeatures}>{car.features}</span>
+        </div>
+        <div style={useStyles.carPriceContainer}>
+          <span>Price</span>
+          <CurrencyFormat
+            style={useStyles.carPrice}
+            value={car.price}
+            thousandSeparator={"."}
+            decimalSeparator={","}
+            prefix="R$"
+            displayType={"text"}
+          ></CurrencyFormat>
+        </div>
+      </button>
+      {cardClicked ? (
+        <DealershipCard
+          dealerships={[{ name: "teste", address: "testsetsete" }]}
+        ></DealershipCard>
+      ) : null}
     </section>
   );
 };

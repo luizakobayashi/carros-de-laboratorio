@@ -34,8 +34,9 @@ const useStyles = {
   title: {
     fontWeight: "600",
     fontSize: "larger",
-    paddingLeft: "5px",
-    paddingTop: "5px"
+    paddingLeft: "10px",
+    paddingTop: "5px",
+    paddingBottom: "5px"
   }
 };
 

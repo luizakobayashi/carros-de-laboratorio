@@ -18,7 +18,7 @@ const useStyles = {
     borderRadius: "20px",
     display: "flex",
     flexDirection: "row",
-    margin: "15px"
+    margin: "10px"
   },
 
   imageContainer: {

@@ -12,7 +12,7 @@ const useStyles = {
     justifyContent: "space-between",
     display: "flex",
     marginTop: "10px",
-    padding: "2% 3%",
+    padding: "5% 3%",
     backgroundColor: "#fff",
     border: "solid 2px #cccc",
     borderRadius: "20px",

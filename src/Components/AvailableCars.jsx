@@ -50,7 +50,7 @@ const AvailableCars = ({}) => {
     <section style={{marginLeft: "25px"}}>
       <div>
         <div style={useStyles.title}>Carros Disponíveis</div>
-        <div style={{ width: "40%" }}>{getCarList()}</div>
+        <div style={{ width: "41%" }}>{getCarList()}</div>
       </div>
     </section>
   );

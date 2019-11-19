@@ -67,18 +67,22 @@ const useStyles = {
     fontWeight: "bold"
   },
 
-  dealerships: {
+  buy: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
+    alignItems: "center",
     paddingLeft: "15px"
   },
 
-  dealershipsTitle: {
+  buyButton: {
+    fontSize: "initial",
+    padding: "10px 15px",
+    textDecoration: "none",
+    cursor: "pointer",
+    color: "white",
+    borderRadius: "15px",
     fontWeight: "600",
-    fontSize: "medium",
-    paddingLeft: "5px",
-    paddingTop: "5px"
+    backgroundColor: "#cccc"
   }
 };
 
@@ -112,11 +116,8 @@ const CarCard = ({ car }) => {
         </div>
       </button>
       {cardClicked ? (
-        <div style={useStyles.dealerships}> 
-          <div style={useStyles.dealershipsTitle}>Selecione a concessionária desejada</div>
-          <DealershipCard
-            dealerships={[{ name: "teste", address: "testsetsete" }]}
-          ></DealershipCard>
+        <div style={useStyles.buy}> 
+          <input type="button" value="Comprar" style={useStyles.buyButton} />
         </div>
       ) : null}
     </section>

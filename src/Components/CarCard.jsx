@@ -80,7 +80,7 @@ const useStyles = {
     textDecoration: "none",
     cursor: "pointer",
     color: "white",
-    borderRadius: "15px",
+    borderRadius: "10px",
     fontWeight: "600",
     backgroundColor: "#cccc"
   }

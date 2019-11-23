@@ -2,10 +2,18 @@ import * as React from "react";
 import logo from "./imgs/logo.png";
 import user from "./imgs/user.png";
 import AvailableCars from "./Components/AvailableCars";
+import CarBuyForm from "./Components/CarBuyForm";
+import {
+  Route,
+  Link,
+  BrowserRouter as Router,
+  BrowserRouter,
+  Switch
+} from "react-router-dom";
 
 const useStyles = {
   home: {
-    display: "flex", 
+    display: "flex",
     width: "100%",
     backgroundColor: "#f8f8fa",
     flexDirection: "column",
@@ -34,7 +42,7 @@ const useStyles = {
     display: "flex",
     alignItems: "flex-end",
     marginRight: "20px",
-    height: "40px",
+    height: "40px"
   },
 
   userContent: {
@@ -53,24 +61,29 @@ const useStyles = {
     width: "100%",
     borderTop: "1.5px solid #cccc"
   } as React.CSSProperties
-}
+};
 
 const App: React.FC = () => {
   return (
-    <div className="App" style={useStyles.home}>
-          <div style={useStyles.header}>
-            <img src={logo} style={useStyles.img}/>
-            <div style={useStyles.user}>
-              <div style={useStyles.userContent}>
-                <div style={useStyles.userContentMessage}>olá usuário</div>
-                <img src={user} style={useStyles.user}/>
-              </div>
+    <BrowserRouter>
+      <div className="App" style={useStyles.home}>
+        <div style={useStyles.header}>
+          <img src={logo} style={useStyles.img} />
+          <div style={useStyles.user}>
+            <div style={useStyles.userContent}>
+              <div style={useStyles.userContentMessage}>olá usuário</div>
+              <img src={user} style={useStyles.user} />
             </div>
           </div>
-          <div style={useStyles.homeContent}>
-            <AvailableCars></AvailableCars>
-          </div>
-    </div>
+        </div>
+        <div style={useStyles.homeContent}>
+          <Switch>
+            <Route exact path="/" component={AvailableCars}></Route>
+            <Route path="/buy-car" component={CarBuyForm}></Route>
+          </Switch>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

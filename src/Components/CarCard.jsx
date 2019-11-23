@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import img from "../imgs/car.png";
 import CurrencyFormat from "react-currency-format";
-import DealershipCard from "./DealershipCard";
+import { withRouter } from "react-router";
 
 const useStyles = {
   container: {
@@ -86,42 +86,62 @@ const useStyles = {
   }
 };
 
-const CarCard = ({ car }) => {
-  const [cardClicked, setCarClicked] = useState(false);
-  const onCarCardClicked = () => {
-    setCarClicked(!cardClicked);
+class CarCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      car: this.props.car,
+      cardClicked: false
+    };
+  }
+
+  onCarCardClicked = () => {
+    this.setState({ cardClicked: !this.state.cardClicked });
   };
 
-  return (
-    <section style={useStyles.container}>
-      <button style={useStyles.carContainer} onClick={onCarCardClicked}>
-        <div style={useStyles.imageContainer}>
-          <img src={img} style={useStyles.image} />
-        </div>
-        <div style={useStyles.carDetailContainer}>
-          <span style={useStyles.carModel}>{car.model}</span>
-          <span style={useStyles.carDetails}>{car.manufacturer}</span>
-          <span style={useStyles.carFeatures}>{car.features}</span>
-        </div>
-        <div style={useStyles.carPriceContainer}>
-          <span>Price</span>
-          <CurrencyFormat
-            style={useStyles.carPrice}
-            value={car.price}
-            thousandSeparator={"."}
-            decimalSeparator={","}
-            prefix="R$"
-            displayType={"text"}
-          ></CurrencyFormat>
-        </div>
-      </button>
-      {cardClicked ? (
-        <div style={useStyles.buy}> 
-          <input type="button" value="Comprar" style={useStyles.buyButton} />
-        </div>
-      ) : null}
-    </section>
-  );
-};
+  onBuyClicked = () => {
+    this.props.history.push("/buy-car");
+  };
 
-export default CarCard;
+  render() {
+    return (
+      <section style={useStyles.container}>
+        <button style={useStyles.carContainer} onClick={this.onCarCardClicked}>
+          <div style={useStyles.imageContainer}>
+            <img src={img} style={useStyles.image} />
+          </div>
+          <div style={useStyles.carDetailContainer}>
+            <span style={useStyles.carModel}>{this.state.car.model}</span>
+            <span style={useStyles.carDetails}>
+              {this.state.car.manufacturer}
+            </span>
+            <span style={useStyles.carFeatures}>{this.state.car.features}</span>
+          </div>
+          <div style={useStyles.carPriceContainer}>
+            <span>Price</span>
+            <CurrencyFormat
+              style={useStyles.carPrice}
+              value={this.state.car.price}
+              thousandSeparator={"."}
+              decimalSeparator={","}
+              prefix="R$"
+              displayType={"text"}
+            ></CurrencyFormat>
+          </div>
+        </button>
+        {this.state.cardClicked ? (
+          <div style={useStyles.buy}>
+            <input
+              type="button"
+              value="Comprar"
+              style={useStyles.buyButton}
+              onClick={this.onBuyClicked}
+            />
+          </div>
+        ) : null}
+      </section>
+    );
+  }
+}
+
+export default withRouter(CarCard);

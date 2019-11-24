@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { Component, useState, useEffect } from "react";
+import {Enviar} from '../services/api'
 
 const useStyles = {
   content: {
@@ -54,8 +55,13 @@ const useStyles = {
   }
 };
 
-const CarBuyForm = ({}) => {
-  return (
+class CarBuyForm extends Component {
+  Enviar = async () => { 
+    const response = await Enviar() 
+    console.log({ response }) 
+  } 
+  render() {
+    return(
     <form name="meu_form" style={useStyles.content}>
        <div style={useStyles.title}>Entre em contato</div>
        <div style={useStyles.formContent}>
@@ -178,10 +184,11 @@ const CarBuyForm = ({}) => {
       </div>
       </div>
       <p>
-        <input type="button" onclick="Enviar()" value="Enviar" style={useStyles.sendButton} />
+        <input type="button" onClick={this.Enviar} value="Enviar" style={useStyles.sendButton} />
       </p>
     </form>
-  );
+    );
+  };
 };
 
 export default CarBuyForm;

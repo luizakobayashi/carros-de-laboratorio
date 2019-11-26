@@ -4,22 +4,28 @@ import DealershipCard from "./DealershipCard";
 
 const cars = [
   {
-    model: "Test Model",
-    price: 10000,
-    manufacturer: "Fiat",
-    features: "Cinza, quatro portas, brilha no escuro"
+    model: "HB20",
+    price: 18000,
+    manufacturer: "Hyundai",
+    features: "Preto, quatro portas, completo"
   },
   {
-    model: "Test Model",
-    price: 10000,
-    manufacturer: "Fiat",
-    features: "Cinza, quatro portas, brilha no escuro"
+    model: "Renegade",
+    price: 40000,
+    manufacturer: "Jeep",
+    features: "Cinza, quatro portas, completo"
   },
   {
-    model: "Test Model",
-    price: 10000,
-    manufacturer: "Fiat",
-    features: "Cinza, quatro portas, brilha no escuro"
+    model: "Hilux",
+    price: 30000,
+    manufacturer: "Toyota",
+    features: "Branco, quatro portas, completo"
+  },
+  {
+    model: "Fit",
+    price: 16000,
+    manufacturer: "Honda",
+    features: "Cinza, quatro portas, completo"
   }
 ];
 

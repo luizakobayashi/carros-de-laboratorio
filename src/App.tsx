@@ -3,6 +3,7 @@ import logo from "./imgs/logo.png";
 import user from "./imgs/user.png";
 import AvailableCars from "./Components/AvailableCars";
 import CarBuyForm from "./Components/CarBuyForm";
+import FinishPage from "./Components/FinishPage";
 import {
   Route,
   Link,
@@ -80,6 +81,7 @@ const App: React.FC = () => {
           <Switch>
             <Route exact path="/" component={AvailableCars}></Route>
             <Route path="/buy-car" component={CarBuyForm}></Route>
+            <Route path="/finish" component={FinishPage}></Route>
           </Switch>
         </div>
       </div>

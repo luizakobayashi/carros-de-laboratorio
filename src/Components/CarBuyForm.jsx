@@ -60,6 +60,11 @@ class CarBuyForm extends Component {
     const response = await Enviar() 
     console.log({ response }) 
   } 
+
+  onBuyClicked = () => {
+    this.props.history.push("/finish");
+  };
+
   render() {
     return(
     <form name="meu_form" style={useStyles.content}>
@@ -184,7 +189,7 @@ class CarBuyForm extends Component {
       </div>
       </div>
       <p>
-        <input type="button" onClick={this.Enviar} value="Enviar" style={useStyles.sendButton} />
+        <input type="button" onClick={this.onBuyClicked} value="Enviar" style={useStyles.sendButton} />
       </p>
     </form>
     );
